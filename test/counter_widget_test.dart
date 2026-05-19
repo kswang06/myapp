@@ -54,5 +54,24 @@ void main() {
       await tester.pump();
       expect(find.text('0'), findsOneWidget);
     });
+
+    testWidgets('does not go below zero other edge case', (tester) async {
+      await tester.pumpWidget(GetMaterialApp(home: CounterWidget()));
+      await tester.tap(find.text('+'));
+      await tester.pump();
+      await tester.tap(find.text('+'));
+      await tester.pump();
+
+      expect(find.text('2'), findsOneWidget);
+
+      await tester.tap(find.text('-'));
+      await tester.pump();
+      await tester.tap(find.text('-'));
+      await tester.pump();
+      await tester.tap(find.text('-'));
+      await tester.pump();
+
+      expect(find.text('0'), findsOneWidget);
+    });
   });
 }
