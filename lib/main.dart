@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myapp/widgets/counter_widget.dart';
+import 'package:myapp/widgets/login_form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: Scaffold(
-        body: CounterWidget(),
+      home: const Scaffold(
+        body: LoginForm(),
       ),
     );
   }
