@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myapp/widgets/login_form.dart';
+import 'package:myapp/repositories/post_repository.dart';
+import 'package:myapp/widgets/posts_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: const Scaffold(
-        body: LoginForm(),
+      home: Scaffold(
+        body: PostsList(
+          repository: HttpPostRepository(),
+        ),
       ),
     );
   }
