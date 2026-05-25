@@ -10,6 +10,11 @@ class CartController extends GetxController {
     itemCount.value = items.length;
   }
 
+  void removeItemAt(int index) {
+    items.removeAt(index);
+    itemCount.value = items.length;
+  }
+
   void clearCart() {
     items.clear();
     itemCount.value = 0;

@@ -29,7 +29,13 @@ class CartPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final product = cart.items[index];
 
-            return ListTile(title: Text(product.name));
+            return ListTile(
+              title: Text(product.name),
+              trailing: IconButton(
+                onPressed: () => cart.removeItemAt(index),
+                icon: const Icon(Icons.delete),
+              ),
+            );
           },
         );
       }),
