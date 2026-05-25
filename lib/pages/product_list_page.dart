@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp/controllers/cart_controller.dart';
 import 'package:myapp/models/product.dart';
+import 'package:uuid/uuid.dart';
 
 class ProductListPage extends StatelessWidget {
   ProductListPage({super.key});
 
   final cart = Get.find<CartController>();
+  final uuid = const Uuid();
 
-  final products = const [
-    Product(id: '1', name: 'Apples'),
-    Product(id: '2', name: 'Bananas'),
-    Product(id: '3', name: 'Oranges'),
-    Product(id: '4', name: 'Pears'),
-    Product(id: '5', name: 'Strawberries'),
+  late final products = [
+    Product(id: uuid.v4(), name: 'Apples'),
+    Product(id: uuid.v4(), name: 'Bananas'),
+    Product(id: uuid.v4(), name: 'Oranges'),
+    Product(id: uuid.v4(), name: 'Pears'),
+    Product(id: uuid.v4(), name: 'Strawberries'),
   ];
 
   @override

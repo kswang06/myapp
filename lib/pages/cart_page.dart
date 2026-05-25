@@ -31,6 +31,7 @@ class CartPage extends StatelessWidget {
 
             return ListTile(
               title: Text(product.name),
+              subtitle: Text(product.id),
               trailing: IconButton(
                 onPressed: () => cart.removeItemAt(index),
                 icon: const Icon(Icons.delete),
